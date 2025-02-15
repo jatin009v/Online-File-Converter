@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online File Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-exchange-alt"></i> File Converter</h1>
+            <p>Convert your files to various formats instantly</p>
+        </header>
+
+        <div class="converter-box">
+            <div class="upload-section">
+                <div class="drop-zone" id="dropZone">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & Drop files here or</p>
+                    <button class="browse-btn">Browse Files</button>
+                    <input type="file" id="fileInput" hidden>
+                </div>
+            </div>
+
+            <div class="conversion-options">
+                <div class="format-selection">
+                    <label for="targetFormat">Convert to:</label>
+                    <select id="targetFormat">
+                        <optgroup label="Document Formats">
+                            <option value="pdf">PDF</option>
+                            <option value="docx">DOCX</option>
+                            <option value="txt">TXT</option>
+                        </optgroup>
+                        <optgroup label="Image Formats">
+                            <option value="jpg">JPG</option>
+                            <option value="png">PNG</option>
+                            <option value="gif">GIF</option>
+                            <option value="webp">WEBP</option>
+                        </optgroup>
+                        <optgroup label="Audio Formats">
+                            <option value="mp3">MP3</option>
+                            <option value="wav">WAV</option>
+                            <option value="ogg">OGG</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="quality-settings">
+                    <label for="quality">Quality:</label>
+                    <input type="range" id="quality" min="1" max="100" value="80">
+                    <span id="qualityValue">80%</span>
+                </div>
+
+                <button class="convert-btn" id="convertBtn" disabled>
+                    <i class="fas fa-cog"></i> Convert File
+                </button>
+            </div>
+
+            <div class="file-list" id="fileList">
+                <!-- Files will be listed here -->
+            </div>
+        </div>
+
+        <div class="conversion-progress" id="conversionProgress" hidden>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p class="progress-text">Converting... <span id="progressPercent">0%</span></p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Supported formats: PDF, DOCX, TXT, JPG, PNG, GIF, WEBP, MP3, WAV, OGG</p>
+        <p>All Right Are Reserved @  Online File Converter - 2025. </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
